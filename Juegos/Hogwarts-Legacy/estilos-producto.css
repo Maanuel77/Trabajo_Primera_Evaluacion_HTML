@@ -1,100 +1,89 @@
-/* --- RESET BÁSICO y ESTILOS GENERALES (Tema 3) --- */
+
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Importante para que el padding no aumente el ancho total */
+    box-sizing: border-box;
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* Paleta de colores oscura estilo "gamer" */
     background-color: #121212; 
-    color: #e0e0e0; /* Texto claro para contraste */
+    color: #e0e0e0;
     line-height: 1.6;
 }
 
-/* Clase utilitaria para centrar el contenido y darle un ancho máximo */
 .container {
     width: 90%;
     max-width: 1100px;
-    margin: 0 auto; /* Centrado horizontal */
+    margin: 0 auto;
 }
 
-/* --- CABECERA (HEADER) --- */
 header {
-    background-color: #1f1b24; /* Un tono morado muy oscuro */
+    background-color: #1f1b24;
     padding: 1rem 0;
-    border-bottom: 3px solid #7c4dff; /* Borde morado brillante de acento */
+    border-bottom: 3px solid #7c4dff;
     margin-bottom: 2rem;
 }
 
 .header-content {
-    /* Usamos flex para separar el logo del botón de volver */
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 header h1 {
-    color: #ffca28; /* Color dorado/amarillo para el título */
+    color: #ffca28;
 }
 
-/* Estilo del botón para volver al índice */
 .btn-volver {
     text-decoration: none;
-    background-color: #7c4dff; /* Fondo morado */
+    background-color: #7c4dff;
     color: white;
     padding: 10px 20px;
-    border-radius: 5px; /* Bordes redondeados (Tema 3) */
+    border-radius: 5px;
     font-weight: bold;
     border: 2px solid transparent;
-    transition: background-color 0.3s; /* Pequeña animación al pasar el ratón */
+    transition: background-color 0.3s;
 }
 
 .btn-volver:hover {
-    background-color: #5c35c1; /* Cambio de color al pasar el ratón */
+    background-color: #5c35c1;
     border-color: #ffca28;
 }
 
-
-/* --- SECCIONES PRINCIPALES DEL MAIN --- */
 section {
-    margin-bottom: 3rem; /* Separación entre secciones */
-    background-color: #1e1e24; /* Fondo ligeramente más claro que el body para las tarjetas */
+    margin-bottom: 3rem;
+    background-color: #1e1e24;
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.5); /* Sombra para dar profundidad */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
 }
 
 h2, h3 {
-    color: #ffca28; /* Títulos en dorado */
+    color: #ffca28;
     margin-bottom: 1.5rem;
-    border-bottom: 1px solid #7c4dff; /* Línea decorativa debajo de los títulos */
+    border-bottom: 1px solid #7c4dff;
     padding-bottom: 10px;
 }
 
-/* --- SECCIÓN 1: Ficha de Producto (Layout de 2 columnas) --- */
 .producto-ficha {
-    /* Flexbox para poner imagen y texto lado a lado */
     display: flex;
-    gap: 2rem; /* Espacio entre las columnas */
+    gap: 2rem;
 }
 
-/* Columna izquierda (imagen) */
 .columna-imagen {
-    flex: 2; /* Ocupa 2 partes del espacio */
+    flex: 2;
 }
 
 .imagen-principal {
-    width: 100%; /* La imagen se adapta al ancho de su columna */
+    width: 100%;
     height: auto;
     border-radius: 8px;
     border: 3px solid #333;
 }
 
-/* Columna derecha (información y compra) */
 .columna-info {
-    flex: 3; /* Ocupa 3 partes (es más ancha) */
+    flex: 3;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -112,7 +101,6 @@ h2, h3 {
     font-style: italic;
 }
 
-/* Estilos del formulario de compra (Tema 4/3) */
 .formulario-compra {
     background-color: #2a2a35;
     padding: 1.5rem;
