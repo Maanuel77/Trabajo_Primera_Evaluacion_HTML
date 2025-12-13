@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* C.E.8.6 Modelo de cajas [cite: 348, 560] */
+}
+
+body {
+    background-color: #121212; /* Fondo muy oscuro */
+    color: white;
+    font-family: 'Arial', sans-serif;
+    height: 100vh; /* Altura completa de la ventana */
+    display: flex;
+    flex-direction: column; /* Organiza: Contenedor central arriba, Footer abajo */
+}
+
+/* --- MAQUETACIÓN FLEXIBLE DE LA ZONA CENTRAL --- */
+.contenedor-central {
+    display: flex; /* Activa Flexbox horizontal [cite: 417] */
+    flex: 1; /* Ocupa todo el espacio vertical disponible menos el footer */
+    width: 100%;
+}
+
+/* Estilos de las Barras Laterales (ASIDE) */
+.barra-lateral {
+    width: 15%; /* Ancho de las columnas laterales */
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid #333;
+    border-right: 1px solid #333;
+    position: relative;
+}
+
+/* Efecto de borde neón en los lados */
+.izquierda { border-right: 4px solid #00d2ff; } /* Azul cian */
+.derecha { border-left: 4px solid #ff0055; } /* Rojo neón */
+
+/* Decoración: Texto vertical */
+.texto-vertical {
+    writing-mode: vertical-rl; /* Texto en vertical */
+    text-orientation: mixed;
+    font-size: 2em;
+    letter-spacing: 10px; /* Separación entre letras [cite: 289] */
+    color: #444;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Decoración: Líneas */
+.adorno-linea {
+    height: 100px;
+    width: 2px;
+    background-color: #555;
+    margin: 20px 0;
+}
+
+/* --- ZONA PRINCIPAL (MAIN) --- */
+.zona-imagen {
+    width: 70%; /* La imagen ocupa la mayoría del ancho (requisito a.i) */
+    position: relative;
+    overflow: hidden; /* Corta la imagen si sobra */
+}
+
+.imagen-full {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen para llenar el hueco sin deformarse */
+    transition: transform 0.5s ease; /* Animación suave */
+}
+
+/* Efecto visual: Al pasar el ratón por el centro, la imagen hace zoom */
+.zona-imagen:hover .imagen-full {
+    transform: scale(1.05);
+    opacity: 0.6; /* Se oscurece un poco para leer el texto */
+}
+
+/* Texto flotante central */
+.texto-superpuesto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrado perfecto [cite: 343] */
+    text-align: center;
+    pointer-events: none; /* Permite hacer clic en la imagen a través del texto */
+}
+
+h1 {
+    font-size: 5vw; /* Tamaño relativo al ancho de pantalla */
+    text-shadow: 4px 4px 0px #ff0055; /* Sombra sólida estilo retro */
+    margin-bottom: 10px;
+}
+
+.parpadeo {
+    font-size: 1.5em;
+    color: #00d2ff;
+    animation: parpadear 1s infinite; /* Animación básica CSS */
+}
+
+/* Definición de la animación */
+@keyframes parpadear {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* --- PIE DE PÁGINA --- */
+#pie-pagina {
+    height: 15vh; /* Altura fija para el pie */
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: space-around; /* Columnas separadas equitativamente */
+    align-items: center;
+    border-top: 2px solid #333;
+}
+
+.columna-footer {
+    text-align: center;
+    font-size: 0.9em;
+}
+
+a { color: #00d2ff; text-decoration: none; }
