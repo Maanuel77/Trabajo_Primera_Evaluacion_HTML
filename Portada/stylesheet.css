@@ -87,13 +87,6 @@ h1 {
 .parpadeo {
     font-size: 1.5em;
     color: #00d2ff;
-    animation: parpadear 1s infinite;
-}
-
-@keyframes parpadear {
-    0% { opacity: 1; }
-    50% { opacity: 0; }
-    100% { opacity: 1; }
 }
 
 #pie-pagina {
@@ -107,7 +100,7 @@ h1 {
 
 .columna-footer {
     text-align: center;
-    font-size: 0.9em;
+    font-size: 15px;
 }
 
 a { color: #00d2ff; text-decoration: none; }
