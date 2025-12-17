@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Índice - PlayStation Games</title>
+    <!-- AÑADE LA RUTA CORRECTA AL CSS DE TU COMPAÑERO -->
+    <!-- <link rel="stylesheet" href="../Juegos/css/styles.css"> -->
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* === RESET Y BASE === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* === HEADER === */
+        .header {
+            background: linear-gradient(to right, #003087, #0066cc);
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo i {
+            font-size: 2rem;
+        }
+        
+        .logo h1 {
+            font-size: 1.5rem;
+        }
+        
+        /* === NAVEGACIÓN === */
+        .menu {
+            background: #333;
+        }
+        
+        .menu ul {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+        }
+        
+        .menu a {
+            color: white;
+            text-decoration: none;
+            padding: 1rem 1.5rem;
+            display: block;
+            transition: background 0.3s;
+        }
+        
+        .menu a:hover,
+        .menu .active {
+            background: #0066cc;
+        }
+        
+        /* === CONTENIDO PRINCIPAL === */
+        .container {
+            display: flex;
+            flex: 1;
+            padding: 2rem;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        
+        .main-content {
+            flex: 3;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .main-content h2 {
+            color: #003087;
+            margin-bottom: 2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #0066cc;
+        }
+        
+        /* === GRID DE JUEGOS === */
+        .index-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .index-item {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #0066cc;
+        }
+        
+        .index-item h3 {
+            color: #003087;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .index-item ul {
+            list-style: none;
+        }
+        
+        .index-item li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        /* BOTONES PARA REDIRIGIR A PÁGINAS DE TU COMPAÑERO */
+        .game-btn {
+            background: #0066cc;
+            color: white;
+            border: none;
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .game-btn:hover {
+            background: #003087;
+        }
+        
+        /* === BARRA LATERAL === */
+        .sidebar {
+            flex: 1;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            max-width: 300px;
+        }
+        
+        .sidebar h3 {
+            color: #003087;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .ad {
+            background: #f0f8ff;
+            border: 1px solid #cce0ff;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .ad h4 {
+            color: #0066cc;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* === FOOTER === */
+        .footer {
+            background: #333;
+            color: white;
+            padding: 2rem;
+            margin-top: auto;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .footer-section h4 {
+            color: #0066cc;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+        }
+        
+        .footer-section a:hover {
+            color: white;
+        }
+        
+        .social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1rem;
+            border-top: 1px solid #444;
+            color: #999;
+            font-size: 0.9rem;
+        }
+        
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                max-width: 100%;
+            }
+            
+            .menu ul {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .index-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <i class="fab fa-playstation"></i>
+            <h1>PlayStation Games</h1>
+        </div>
+    </header>
+
+    <nav class="menu">
+        <ul>
+            <li><a href="index.html">Portada</a></li>
+            <li><a href="indice.html" class="active">Índice</a></li>
+            <li><a href="galeria.html">Galería</a></li>
+            <li><a href="juegos.html">Juegos</a></li>
+            <li><a href="blog.html">Blog</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <main class="main-content">
+            <h2>Índice de Juegos PlayStation</h2>
+
+            <div class="index-grid">
+                <!-- ACCIÓN -->
+                <div class="index-item">
+                    <h3><i class="fas fa-gamepad"></i> Acción</h3>
+                    <ul>
+                        <li>God of War: Ragnarök
+                            <!-- AÑADE LA RUTA CORRECTA DEL ARCHIVO DE TU COMPAÑERO -->
+                            <a href="../Juegos/godofwar.html" class="game-btn">Ver</a>
+                        </li>
+                        <li>Spider-Man 2
+                            <a href="../Juegos/spiderman.html" class="game-btn">Ver</a>
+                        </li>
+                        <li>The Last of Us Part II
+                            <a href="../Juegos/tlou.html" class="game-btn">Ver</a>
+                        </li>
+                        <li>Uncharted 4
+                            <a href="../Juegos/uncharted.html" class="game-btn">Ver</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- AVENTURA -->
+                <div class="index-item">
+                    <h3><i class="fas fa-ghost"></i> Aventura</h3>
+                    <ul>
+                        <li>Hogwarts-Legacy
+                            <a href="../Juegos/Hogwarts-Legacy/hogwarts-legacy.html" class="game-btn">Ver</a>
+                        </li>
+                        <li>Ratchet & Clank: Rift Apart
+                            <a href="../Juegos/ratchet.html" class="game-btn">Ver</a>
+                        </li>
+                        <li>Ghost of Tsushima
+                            <a href="../Juegos/ghost.html" class="game-btn">Ver</a>
+                        </li>
+                        <li>Days Gone
+                            <a href="../Juegos/daysgone.html" class="game-btn">Ver</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- RPG -->
+                <div class="index-item">
+                    <h3><i class="fas fa-dragon"></i> RPG</h3>
+                    <ul>
+                        <li>Final Fantasy XVI
+                            <a href="../Juegos/finalfantasy.html" class="game-btn">Ver</a>
+                        </li>
+                        <li>Elden Ring
+                            <a href="../Juegos/eldenring.html" class="game-btn">Ver</a>
+                        </li>
+                        <li>Persona 5 Royal
+                            <a href="../Juegos/persona.html" class="game-btn">Ver</a>
+                        </li>
+                        <li>The Witcher 3
+                            <a href="../Juegos/witcher.html" class="game-btn">Ver</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- CARRERAS -->
+                <div class="index-item">
+                    <h3><i class="fas fa-car"></i> Carreras</h3>
+                    <ul>
+                        <li>Gran Turismo 7
+                            <a href="../Juegos/gt7.html" class="game-btn">Ver</a>
+                        </li>
+                        <li>Need for Speed Heat
+                            <a href="../Juegos/needforspeed.html" class="game-btn">Ver</a>
+                        </li>
+                        <li>F1 2023
+                            <a href="../Juegos/f1.html" class="game-btn">Ver</a>
+                        </li>
+                        <li>Burnout Paradise
+                            <a href="../Juegos/burnout.html" class="game-btn">Ver</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- AÑADE AQUÍ EL CONTENIDO DE LA IMAGEN DESTACADA SI LO NECESITAS -->
+            <!--
+            <div class="featured-image">
+                <img src="ruta/a/tu/imagen.jpg" alt="Descripción">
+                <p class="image-caption">Texto descriptivo</p>
+            </div>
+            -->
+        </main>
+
+        <aside class="sidebar">
+            <h3><i class="fas fa-ad"></i> Publicidad</h3>
+
+            <div class="ad">
+                <h4>¡Oferta PS Plus!</h4>
+                <p>25% de descuento en suscripción anual</p>
+                <!-- AÑADE IMAGEN LOCAL -->
+                <!-- <img src="img/psplus.jpg" alt="PS Plus"> -->
+                <button>Ver Oferta</button>
+            </div>
+
+            <div class="ad">
+                <h4>Nuevo DualSense</h4>
+                <p>Control inalámbrico para PS5</p>
+                <!-- AÑADE IMAGEN LOCAL -->
+                <!-- <img src="img/dualsense.jpg" alt="DualSense"> -->
+                <button>Comprar Ahora</button>
+            </div>
+
+            <div class="ad">
+                <h4>Próximos Lanzamientos</h4>
+                <ul>
+                    <li>Marvel's Spider-Man 2 - Oct 2023</li>
+                    <li>Final Fantasy XVI - Jun 2023</li>
+                    <li>Star Wars Jedi: Survivor - Abr 2023</li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>PlayStation Games</h4>
+                <p>Tu portal de juegos de PlayStation</p>
+                <p>© 2023 Todos los derechos reservados</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p>Email: info@playstationgames.com</p>
+                <p>Tel: +34 900 123 456</p>
+                <div class="social">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <p><a href="#">Aviso Legal</a></p>
+                <p><a href="#">Política de Privacidad</a></p>
+                <p><a href="#">Cookies</a></p>
+                <p><a href="#">Términos de Uso</a></p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>Proyecto educativo - LMGSI - 1º DAM</p>
+        </div>
+    </footer>
+</body>
+</html>
