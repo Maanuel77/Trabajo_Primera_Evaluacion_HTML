@@ -1,0 +1,303 @@
+/*
+   1. RESET Y ESTILOS GENERALES (PARA TODO)
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/*
+   2. HEADER Y FOOTER (COMÚN)
+*/
+header {
+    background-color: #1f1b24;
+    padding: 16px 0;
+    border-bottom: 3px solid #7c4dff;
+    margin-bottom: 32px;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 { color: #ffca28; }
+
+.btn-volver {
+    background-color: #7c4dff;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-volver:hover { background-color: #5c35c1; }
+
+footer {
+    background-color: #0a0a0a;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto;
+    border-top: 1px solid #333;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.footer-portada {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 15vh;
+}
+
+/*
+   3. ESTILOS DE LA PORTADA
+*/
+.contenedor-central {
+    display: flex;
+    flex: 1;
+    width: 100%;
+}
+
+.barra-lateral {
+    width: 15%;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #333;
+}
+
+.izquierda { border-right: 4px solid #00d2ff; }
+.derecha { border-left: 4px solid #ff0055; }
+
+.texto-vertical {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-size: 2em;
+    letter-spacing: 10px;
+    color: #444;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.adorno-linea {
+    height: 100px;
+    width: 2px;
+    background-color: #555;
+    margin: 20px 0;
+}
+
+.zona-imagen {
+    width: 70%;
+    position: relative;
+    overflow: hidden;
+}
+
+.imagen-full {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.zona-imagen:hover .imagen-full {
+    transform: scale(1.05);
+    opacity: 0.6;
+}
+
+.texto-superpuesto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    text-align: center;
+}
+
+.texto-superpuesto h1 {
+    font-size: 5vw;
+    text-shadow: 4px 4px 0px #ff0055;
+    margin-bottom: 10px;
+}
+
+.parpadeo {
+    font-size: 1.5em;
+    color: #00d2ff;
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink { 0% {opacity: 1;} 50% {opacity: 0;} 100% {opacity: 1;} }
+
+/*
+   4. ESTILOS FICHA PRODUCTO (HOGWARTS)
+*/
+.seccion-producto {
+    background-color: #1e1e24;
+    padding: 32px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    margin-bottom: 48px;
+}
+
+.producto-ficha { display: flex; gap: 32px; }
+.columna-imagen { flex: 2; }
+.columna-info { flex: 3; display: flex; flex-direction: column; justify-content: center; }
+
+.imagen-principal {
+    width: 100%;
+    border-radius: 8px;
+    border: 3px solid #333;
+}
+
+.precio {
+    font-size: 40px;
+    color: #fff;
+    font-weight: bold;
+    margin: 16px 0;
+}
+
+.btn-comprar {
+    width: 100%;
+    padding: 15px;
+    background-color: #ffca28;
+    color: #121212;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1.1em;
+}
+
+.btn-comprar:hover { background-color: #d4a620; }
+
+.galeria-imagenes {
+    display: flex;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.galeria-imagenes img {
+    width: 33.33%;
+    border-radius: 5px;
+    transition: transform 0.3s;
+}
+
+.galeria-imagenes img:hover { transform: scale(1.05); }
+
+/*
+
+CSS PARA EL CARRUSEL DE IMÁGENES DE HOLLOW KNIGHT
+
+*/
+.marco-carrusel {
+    border: 5px solid #e0e0e0;
+    background-color: #000;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto; 
+    display: flex;
+    flex-direction: column;
+}
+
+.cuerpo-carrusel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 450px;
+    overflow: hidden;
+}
+
+.flecha-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 100%;
+    background-color: #1a1a1a;
+    font-size: 3rem;
+    color: #ffca28;
+    transition: background 0.3s;
+    border-left: 1px solid #333;
+    border-right: 1px solid #333;
+}
+
+.flecha-nav:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.contenedor-foto {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: #000;
+}
+
+.contenedor-foto img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border: 2px solid #333;
+}
+
+
+.pie-carrusel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 5px solid #e0e0e0;
+    background-color: #fff;
+    color: #000;
+    padding: 15px 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+.pie-texto {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+.paginacion-numeros a {
+    margin-left: 10px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #000;
+}
+
+.paginacion-numeros a:hover {
+    text-decoration: underline;
+}
+
+
+.paginacion-numeros a.activo {
+    font-size: 1.5rem;
+    color: #ff0055;
+    font-weight: 900;
+}

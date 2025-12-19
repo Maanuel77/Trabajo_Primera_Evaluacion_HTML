@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comprar Hogwarts Legacy - GameStore</title>
-    <link rel="stylesheet" href="estilos-producto.css">
+    <link rel="stylesheet" href="../../stylesheet.css">
 </head>
 
 <body>
@@ -16,14 +16,14 @@
                 <h1>GameStore</h1>
             </div>
             <nav>
-                <a href="../Indice.html" class="btn-volver">← Volver al Índice</a>
+                <a href="../../Indice/Indice.html" class="btn-volver">← Volver al Índice</a>
             </nav>
         </div>
     </header>
 
     <main class="container">
 
-        <section class="producto-ficha">
+        <section class="seccion-producto producto-ficha">
             <div class="columna-imagen">
                 <img src="Img/imagen1.jpg" alt="Portada de Hogwarts Legacy" class="imagen-principal">
             </div>
@@ -31,62 +31,39 @@
             <div class="columna-info">
                 <h2>Hogwarts Legacy</h2>
                 <p class="precio">59,99 €</p>
-                <p class="descripcion-corta">Vive lo que no está escrito. Un RPG de acción inmersivo en mundo abierto
-                    ambientado en el mundo mágico del siglo XIX. Tu legado es lo que haces con él.</p>
+                <p class="descripcion-corta">Vive lo que no está escrito. Un RPG de acción inmersivo en mundo abierto.</p>
 
                 <form action="#" method="post" class="formulario-compra">
-                    <div class="opcion-compra">
-                        <label for="plataforma">Elige tu plataforma:</label>
-                        <select name="plataforma" id="plataforma">
-                            <option value="ps5">PlayStation 5</option>
-                            <option value="xbox">Xbox Series X</option>
-                            <option value="pc">PC (Steam)</option>
-                        </select>
-                    </div>
-                    <button type="button" class="btn-comprar">Añadir al Carrito</button>
+                   <button type="button" class="btn-comprar">Añadir al Carrito</button>
                 </form>
                 
-                <ul class="detalles-rapidos">
+                <ul class="detalles-rapidos" style="margin-top: 20px;">
                     <li><strong>Género:</strong> RPG de acción</li>
                     <li><strong>Lanzamiento:</strong> 10/02/2023</li>
                 </ul>
             </div>
         </section>
 
-        <section class="seccion-multimedia">
+        <section class="seccion-producto seccion-multimedia">
             <h3>Tráiler Oficial</h3>
             <div class="video-container">
-                <video src="Videos/videoplayback.mp4" controls></video>
+                <video src="Videos/videoplayback.mp4" controls width="100%"></video>
             </div>
 
             <h3>Capturas del Juego</h3>
             <div class="galeria-imagenes">
-                <img src="Img/imagen2.jpg" alt="Captura de pantalla volando en escoba">
-                <img src="Img/imagen3.jpg" alt="Captura de pantalla combate mágico">
-                <img src="Img/imagen4.jpg" alt="Captura de pantalla sala común">
+                <img src="Img/imagen2.jpg" alt="Captura de pantalla">
+                <img src="Img/imagen3.jpg" alt="Captura de pantalla">
+                <img src="Img/imagen4.jpg" alt="Captura de pantalla">
             </div>
-        </section>
-
-        <section class="descripcion-larga">
-            <h3>Acerca del juego</h3>
-            <article>
-                <p>Hogwarts Legacy es un RPG de acción en un mundo abierto ambientado en el universo de los libros de
-                    Harry Potter. Emprende un viaje que te llevará a lugares nuevos y conocidos, mientras descubres
-                    animales fantásticos, personalizas a tu personaje, elaboras pociones, dominas hechizos y mejoras tus
-                    talentos para convertirte en el mago o bruja que quieres ser.</p>
-                <p>Disfruta de Hogwarts en el siglo XIX. Tu personaje es un estudiante que tiene la clave de un antiguo
-                    secreto que amenaza con destruir el mundo mágico. Consigue aliados, enfréntate a magos tenebrosos y
-                    decide el destino del mundo mágico. Tú forjas tu propio legado.</p>
-            </article>
         </section>
 
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Proyecto GameStore. 1ºer trimestre</p>
+            <p>&copy; 2025 Proyecto GameStore. 1er trimestre</p>
         </div>
     </footer>
 </body>
-
 </html>
